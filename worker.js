@@ -129,12 +129,12 @@ export default {
           const isIp = /^(\d{1,3}\.){3}\d{1,3}$/.test(hostname) || hostname.includes(':');
           
           if (!isIp) {
-              const dohUrl = `https://family.cloudflare-dns.com/dns-query?name=${encodeURIComponent(hostname)}`;
-              const dohResp = await fetch(dohUrl, {
-                  headers: { "Accept": "application/dns-json" }
-              });
-              
-              if (dohResp.ok) {
+               const dohUrl = `https://1.1.1.3/dns-query?name=${encodeURIComponent(hostname)}&type=A`;
+               const dohResp = await fetch(dohUrl, {
+                   headers: { "Accept": "application/dns-json" }
+               });
+               
+               if (dohResp.ok) {
                   const dnsData = await dohResp.json();
                   // 检查 Answer
                   if (dnsData.Answer) {
