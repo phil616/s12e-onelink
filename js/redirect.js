@@ -24,6 +24,23 @@ document.addEventListener('DOMContentLoaded', function() {
         return null;
     }
 
+    // 检查是否过期
+    function isExpired(ruleData) {
+        if (!ruleData || !ruleData.expired_at) return false;
+        
+        try {
+            const expireDate = new Date(ruleData.expired_at);
+            // 如果日期无效，视为未过期
+            if (isNaN(expireDate.getTime())) return false;
+            
+            const now = new Date();
+            return now > expireDate;
+        } catch (e) {
+            console.error("Error parsing expiration date", e);
+            return false;
+        }
+    }
+
     // 查找规则
     // 优先级: 1. 直接跳转 (Direct) 2. 中间页跳转 (Intermediate) 3. Fallback
     
@@ -31,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let mode = 'fallback'; // direct, intermediate, fallback
     let ruleData = null;
 
-    // 只要规则存在，就视为命中（过期逻辑由后端处理，后端会删除过期条目）
+    // 只要规则存在且未过期，就视为命中
     if (rulesDirect[lookupPath]) {
         ruleData = getRuleData(rulesDirect[lookupPath]);
-        if (ruleData) {
+        if (ruleData && !isExpired(ruleData)) {
             target = ruleData.url;
             mode = 'direct';
         }
@@ -43,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 如果没有命中 Direct 规则，继续检查 Intermediate
     if (!target && rulesIntermediate[lookupPath]) {
         ruleData = getRuleData(rulesIntermediate[lookupPath]);
-        if (ruleData) {
+        if (ruleData && !isExpired(ruleData)) {
             target = ruleData.url;
             mode = 'intermediate';
         }
