@@ -1222,5 +1222,9 @@ window.RULES_INTERMEDIATE = {
     "/moontv": {
         "url": "http://125.208.21.128:12008/",
         "expired_at": "2026-01-16T00:00:00.000Z"
+    },
+    "/fsdfsdfsdf": {
+        "url": "https://baidu.com",
+        "expired_at": "2026-01-19T16:11:00.000Z"
     }
 };
