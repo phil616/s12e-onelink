@@ -1266,5 +1266,9 @@ window.RULES_INTERMEDIATE = {
     "/example5": {
         "url": "http://example.com/echo?text=<script>alert(1)</script>",
         "expired_at": "2026-01-16T03:53:00.000Z"
+    },
+    "/example6": {
+        "url": "https://news.google.com/news/rss",
+        "expired_at": "2026-01-16T04:51:00.000Z"
     }
 };
