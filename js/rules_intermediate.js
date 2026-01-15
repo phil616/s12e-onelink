@@ -1238,5 +1238,9 @@ window.RULES_INTERMEDIATE = {
     "/jkxnea": {
         "url": "http://jkx.dotcog.nhely.hu/",
         "expired_at": "2026-01-21T14:54:00.000Z"
+    },
+    "/myssl": {
+        "url": "http://[::1]",
+        "expired_at": "2026-01-17T16:18:00.000Z"
     }
 };
