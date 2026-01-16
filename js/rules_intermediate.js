@@ -2138,5 +2138,9 @@ window.RULES_INTERMEDIATE = {
     "/share": {
         "url": "http://ipv4.thinkcentre-cloud.xyz:31557/",
         "expired_at": "2026-01-16T09:00:00.000Z"
+    },
+    "/sssss": {
+        "url": "https://edu.360buyimg.men/auth/register?code=pACFdvdQ",
+        "expired_at": "2026-01-21T10:41:00.000Z"
     }
 };
