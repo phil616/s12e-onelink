@@ -2150,5 +2150,9 @@ window.RULES_INTERMEDIATE = {
     "/test3": {
         "url": "https://2x.nx/test3",
         "expired_at": "2026-01-17T02:10:00.000Z"
+    },
+    "/jiangjun": {
+        "url": "https://www.bilibili.com/",
+        "expired_at": "2026-01-17T11:08:00.000Z"
     }
 };
