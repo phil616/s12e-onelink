@@ -2170,5 +2170,9 @@ window.RULES_INTERMEDIATE = {
     "/AcoFork": {
         "url": "https://okzweb.com/login/#",
         "expired_at": "2026-01-23T07:06:00.000Z"
+    },
+    "/alphabet": {
+        "url": "https://abc.xyz",
+        "expired_at": "2026-01-23T09:45:00.000Z"
     }
 };
